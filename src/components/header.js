@@ -11,7 +11,7 @@ function Header(props) {
         <h1 className="logo-title">Directory</h1>
       </div>
       <hr className="underline" />
-      <label className="search-text" for="site-search">
+      <label className="search-text">
         Find your favorite Characters, Films, Species, <br />
         Starships and Planets
       </label>
@@ -21,7 +21,7 @@ function Header(props) {
         <input
           type="text"
           id="site-search"
-          class="form-control"
+          className="form-control"
           placeholder="Enter a search term"
         />
       </div>

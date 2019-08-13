@@ -164,18 +164,17 @@ $desktop: 1024px;
     }
 
     @include desktop {
-      padding-left: 10rem;
+      padding-left: 11rem;
     }
   }
 
   .has-search .form-control-feedback {
     position: absolute;
-    top: 25%;
+    top: 50%;
+    transform: translateY(-50%);
     left: 2%;
     z-index: 2;
     display: block;
-    width: 3rem;
-    height: 3rem;
     line-height: 2.375rem;
     text-align: center;
     pointer-events: none;
@@ -185,8 +184,7 @@ $desktop: 1024px;
     }
 
     @include desktop {
-      top: 30%;
-      left: 7%;
+      left: 8%;
     }
   }
 }
