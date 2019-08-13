@@ -6,6 +6,13 @@
   font-size: 1.6rem;
 }
 
+:root {
+  --main-color: #e0e0e0;
+  --secondary-color: white;
+  --main-text-color: #666;
+  --secondary-text-color: #3e5869;
+}
+
 *,
 *::before,
 *::after {
@@ -17,26 +24,169 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: "Candara", sans-serif;
 }
 
-#root {
-  height: 100%;
+hr {
+  margin: 0;
+}
+
+//Mixins
+$tablet: 700px;
+@mixin tablet {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+$desktop: 1024px;
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
 }
 
 //LAYOUT
-
 .app {
   height: 100%;
-  background-color: #fff;
+  background-color: var(--secondary-color);
   display: flex;
   flex-direction: column;
 }
-
 .header {
-  flex-basis: 50rem;
+  flex-basis: 60rem;
   background-image: url(./assets/hero-banner.jpg);
 }
 
 .main {
   flex-basis: auto;
+}
+
+//HEADER
+
+.header {
+  height: 100%;
+  color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .top-logo {
+    width: 12rem;
+    height: 4.7rem;
+    margin: 5rem;
+    align-self: flex-start;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+
+    .middle-logo {
+      width: 12rem;
+      height: 4.7rem;
+      margin-bottom: 1rem;
+    }
+
+    .logo-title {
+      font-size: 4rem;
+      margin: 0;
+      padding-left: 1.5rem;
+      font-weight: bold;
+    }
+  }
+
+  .underline {
+    width: 30rem;
+    border: 0;
+    border-top: 2px solid var(--secondary-color);
+  }
+
+  .search-text {
+    display: block;
+    text-align: center;
+    font-size: 2.2rem;
+    padding: 4rem 0;
+    margin: 0 auto;
+    color: var(--main-color);
+
+    @include tablet {
+      padding: 3rem 0;
+    }
+
+    @include desktop {
+      padding: 2rem 0;
+    }
+  }
+
+  .form-group {
+    width: 33rem;
+    position: relative;
+    color: var(--main-text-color);
+
+    @include tablet {
+      width: 50rem;
+    }
+
+    @include desktop {
+      width: 70rem;
+    }
+
+    .fa {
+      font-size: 2.3rem;
+    }
+
+    .form-control {
+      height: 5rem;
+      border-radius: 0.5rem;
+      font-size: 2.2rem;
+
+      @include tablet {
+        height: 5.5rem;
+      }
+
+      @include desktop {
+        height: 6rem;
+      }
+    }
+  }
+
+  .has-search .form-control {
+    padding-left: 4rem;
+    background-color: var(--main-color);
+
+    @include tablet {
+      padding-left: 8rem;
+    }
+
+    @include desktop {
+      padding-left: 10rem;
+    }
+  }
+
+  .has-search .form-control-feedback {
+    position: absolute;
+    top: 25%;
+    left: 2%;
+    z-index: 2;
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+
+    @include tablet {
+      left: 6%;
+    }
+
+    @include desktop {
+      top: 30%;
+      left: 7%;
+    }
+  }
 }
