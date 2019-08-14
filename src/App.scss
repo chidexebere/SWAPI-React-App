@@ -7,10 +7,12 @@
 }
 
 :root {
-  --main-color: #e0e0e0;
+  --main-color: #e5e5e5;
   --secondary-color: white;
-  --main-text-color: #666;
-  --secondary-text-color: #3e5869;
+  --main-text-color: #777;
+  --secondary-text-color: #444;
+  --card-color: #ccc;
+  //--inner-color: #f1f1f1;
 }
 
 *,
@@ -187,4 +189,50 @@ $desktop: 1024px;
       left: 8%;
     }
   }
+}
+
+//MAIN
+
+.bg-light {
+  background-color: var(--secondary-color) !important;
+}
+
+.card-body {
+  background-color: var(--card-color);
+  padding: 0 0 0.7rem 0;
+}
+
+.card-inner {
+  position: relative;
+  left: 0.7rem;
+  color: var(--main-text-color);
+  background-color: var(--main-color);
+  padding: 1.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+a:hover {
+  background-color: #000;
+  color: var(--secondary-color);
+}
+// .btn-group {
+//   display: flex;
+//   align-items: flex-end;
+// }
+
+.card-title {
+  color: var(--secondary-text-color);
+}
+
+.card-link {
+  background-color: var(--card-color);
+  color: #444;
+  align-self: flex-end;
 }

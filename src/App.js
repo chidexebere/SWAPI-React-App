@@ -9,11 +9,31 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      people: []
+      ships: []
     };
 
     //this.getPeople = this.getPeople.bind(this);
   }
+
+  getShips = () => {
+    return axios
+      .get("https://swapi.co/api/starships/?page=1")
+      .then(response => {
+        console.log(response.data.results);
+        this.setState({
+          ships: response.data.results
+        });
+      });
+  };
+
+  getPlanets = () => {
+    return axios.get("https://swapi.co/api/planets/?page=1").then(response => {
+      console.log(response.data.results);
+      this.setState({
+        planets: response.data.results
+      });
+    });
+  };
 
   getPeople = () => {
     return axios.get("https://swapi.co/api/people/?page=1").then(response => {
@@ -25,16 +45,18 @@ class App extends React.Component {
   };
 
   componentDidMount() {
+    this.getShips();
+    this.getPlanets();
     this.getPeople();
   }
 
   render() {
-    const { people } = this.state;
+    // const { ships } = this.state.ships;
 
     return (
       <div className="app">
         <Header />
-        <Main people={people} />
+        <Main ships={this.state.ships} />
       </div>
     );
   }
