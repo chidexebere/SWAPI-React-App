@@ -12,7 +12,7 @@
   --main-text-color: #777;
   --secondary-text-color: #444;
   --card-color: #ccc;
-  //--inner-color: #f1f1f1;
+  --link-hover-color: #000;
 }
 
 *,
@@ -31,6 +31,17 @@ body {
 
 hr {
   margin: 0;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 1rem 3rem;
+}
+
+p,
+a {
+  font-size: 1.4rem;
 }
 
 //Mixins
@@ -64,7 +75,7 @@ $desktop: 1024px;
   flex-basis: auto;
 }
 
-//HEADER
+//HEADER COMPONENT
 
 .header {
   height: 100%;
@@ -191,48 +202,99 @@ $desktop: 1024px;
   }
 }
 
-//MAIN
+// MAIN COMPONENT
+
+//SHIPS COMPONENT
 
 .bg-light {
   background-color: var(--secondary-color) !important;
+
+  .container {
+    @include tablet {
+      max-width: 90%;
+    }
+
+    @include desktop {
+      max-width: 93%;
+    }
+
+    .col-md-4 {
+      padding-right: 3rem;
+      padding-left: 3rem;
+      @include tablet {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+
+      @include desktop {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+      }
+
+      .card-img-top {
+        width: 100%;
+        height: 40vh;
+        object-fit: cover;
+      }
+
+      .card-body {
+        background-color: var(--card-color);
+        padding: 0 0 0.7rem 0;
+
+        .card-inner {
+          position: relative;
+          left: 0.7rem;
+          color: var(--main-text-color);
+          background-color: var(--main-color);
+          padding: 1.3rem 1.5rem 0.8rem;
+          display: flex;
+          flex-direction: column;
+
+          .card-title {
+            color: var(--secondary-text-color);
+          }
+
+          .card-text {
+            height: 7rem;
+          }
+
+          .card-link {
+            background-color: var(--card-color);
+            color: var(--secondary-text-color);
+            align-self: flex-end;
+          }
+
+          .card-link:hover {
+            background-color: var(--link-hover-color);
+            color: var(--secondary-color);
+          }
+        }
+      }
+    }
+  }
 }
 
-.card-body {
-  background-color: var(--card-color);
-  padding: 0 0 0.7rem 0;
+//PLANETS COMPONENT
+
+.carousel-inner {
+  padding: 0 5rem 5rem;
+
+  .card {
+    min-height: 35rem;
+  }
+
+  .mb-4 {
+    margin-bottom: 3rem !important;
+  }
 }
 
-.card-inner {
-  position: relative;
-  left: 0.7rem;
-  color: var(--main-text-color);
-  background-color: var(--main-color);
-  padding: 1.25rem 2rem;
-  display: flex;
-  flex-direction: column;
+.carousel-indicators li {
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--secondary-text-color);
+  border-radius: 50%;
 }
 
-a {
-  text-decoration: none;
-  display: inline-block;
-  padding: 8px 16px;
-}
-
-a:hover {
-  background-color: #000;
-  color: var(--secondary-color);
-}
-// .btn-group {
-//   display: flex;
-//   align-items: flex-end;
-// }
-
-.card-title {
-  color: var(--secondary-text-color);
-}
-
-.card-link {
-  background-color: var(--card-color);
-  color: #444;
-  align-self: flex-end;
+.carousel-caption {
+  padding-bottom: 0;
 }
