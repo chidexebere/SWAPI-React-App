@@ -1,5 +1,6 @@
 import React from "react";
 import planets from "../data/planetData";
+import Title from "./title";
 
 function Planets(props) {
   const getResource = (searched, fromApi) => {
@@ -14,14 +15,25 @@ function Planets(props) {
     }
   };
 
-  // const style = {
-  //   backgroundImage: `url(${Object.values(getResource(planets))[2]})`,
-  //   backgroundPosition: "center",
-  //   backgroundSize: "cover",
-  //   backgroundRepeat: "no-repeat"
-  // };
+  const lineStyle = {
+    width: 90,
+    border: "3px solid",
+    margin: 10
+  };
+
+  const textStyle = {
+    fontSize: 32,
+    paddingLeft: 0
+  };
+
   return (
     <section className="planets">
+      <Title
+        displayTitleLogo={false}
+        text="Popular Planets"
+        textStyle={textStyle}
+        lineStyle={lineStyle}
+      />
       <div id="demo" className="carousel slide" data-ride="carousel">
         <ul className="carousel-indicators">
           <li data-target="#demo" data-slide-to="0" className="active" />

@@ -76,6 +76,38 @@ $desktop: 1024px;
 }
 
 //HEADER COMPONENT
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  .title-head {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+
+    .title-logo {
+      width: 12rem;
+      height: 4.7rem;
+      margin-bottom: 1rem;
+    }
+
+    .title-text {
+      font-size: 4rem;
+      margin: 0;
+      padding-left: 1.5rem;
+      font-weight: bold;
+    }
+  }
+
+  .underline {
+    width: 30rem;
+    border: 1px solid var(--secondary-color);
+  }
+}
 
 .header {
   height: 100%;
@@ -89,34 +121,6 @@ $desktop: 1024px;
     height: 4.7rem;
     margin: 5rem;
     align-self: flex-start;
-  }
-
-  .title {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-top: 4rem;
-
-    .middle-logo {
-      width: 12rem;
-      height: 4.7rem;
-      margin-bottom: 1rem;
-    }
-
-    .logo-title {
-      font-size: 4rem;
-      margin: 0;
-      padding-left: 1.5rem;
-      font-weight: bold;
-    }
-  }
-
-  .underline {
-    width: 30rem;
-    border: 0;
-    border-top: 2px solid var(--secondary-color);
   }
 
   .search-text {
@@ -276,15 +280,19 @@ $desktop: 1024px;
 
 //PLANETS COMPONENT
 
-.carousel-inner {
-  padding: 0 5rem 5rem;
+.carousel {
+  margin-top: 4rem;
 
-  .card {
-    min-height: 35rem;
-  }
+  .carousel-inner {
+    padding: 0 5rem 5rem;
 
-  .mb-4 {
-    margin-bottom: 3rem !important;
+    .card {
+      min-height: 35rem;
+    }
+
+    .mb-4 {
+      margin-bottom: 3rem !important;
+    }
   }
 }
 

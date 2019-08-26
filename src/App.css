@@ -69,6 +69,57 @@ a {
       flex-basis: auto;
 }
 
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1rem;
+}
+
+.title .title-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 3rem;
+}
+
+.title .title-head .title-logo {
+  width: 12rem;
+  height: 4.7rem;
+  margin-bottom: 1rem;
+}
+
+.title .title-head .title-text {
+  font-size: 4rem;
+  margin: 0;
+  padding-left: 1.5rem;
+  font-weight: bold;
+}
+
+.title .underline {
+  width: 30rem;
+  border: 1px solid var(--secondary-color);
+}
+
 .header {
   height: 100%;
   color: var(--secondary-color);
@@ -90,44 +141,6 @@ a {
   margin: 5rem;
   -ms-flex-item-align: start;
       align-self: flex-start;
-}
-
-.header .title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 4rem;
-}
-
-.header .title .middle-logo {
-  width: 12rem;
-  height: 4.7rem;
-  margin-bottom: 1rem;
-}
-
-.header .title .logo-title {
-  font-size: 4rem;
-  margin: 0;
-  padding-left: 1.5rem;
-  font-weight: bold;
-}
-
-.header .underline {
-  width: 30rem;
-  border: 0;
-  border-top: 2px solid var(--secondary-color);
 }
 
 .header .search-text {
@@ -319,15 +332,19 @@ a {
   color: var(--secondary-color);
 }
 
-.carousel-inner {
+.carousel {
+  margin-top: 4rem;
+}
+
+.carousel .carousel-inner {
   padding: 0 5rem 5rem;
 }
 
-.carousel-inner .card {
+.carousel .carousel-inner .card {
   min-height: 35rem;
 }
 
-.carousel-inner .mb-4 {
+.carousel .carousel-inner .mb-4 {
   margin-bottom: 3rem !important;
 }
 

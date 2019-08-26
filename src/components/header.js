@@ -1,4 +1,5 @@
 import React from "react";
+import Title from "./title";
 import logo from "../assets/logo.png";
 
 function Header(props) {
@@ -6,11 +7,12 @@ function Header(props) {
     <section className="header">
       <img className="top-logo" src={logo} alt="Star Wars Logo" />
 
-      <div className="title ">
-        <img className="middle-logo" src={logo} alt="Star Wars Logo" />
-        <h1 className="logo-title">Directory</h1>
-      </div>
-      <hr className="underline" />
+      <Title
+        displayTitleLogo={true}
+        text="Directory"
+        img={logo}
+        imgAlt="Star Wars Logo"
+      />
       <label className="search-text">
         Find your favorite Characters, Films, Species, <br />
         Starships and Planets

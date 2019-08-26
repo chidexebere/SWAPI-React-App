@@ -1,5 +1,6 @@
 import React from "react";
 import starShips from "../data/shipData";
+import Title from "./title";
 
 function Ships(props) {
   const getResource = (searched, fromApi) => {
@@ -14,8 +15,25 @@ function Ships(props) {
     }
   };
 
+  const lineStyle = {
+    width: 90,
+    border: "3px solid",
+    margin: 10
+  };
+
+  const textStyle = {
+    fontSize: 32,
+    paddingLeft: 0
+  };
+
   return (
     <section className="ships">
+      <Title
+        displayTitleLogo={false}
+        text="Popular Starships"
+        textStyle={textStyle}
+        lineStyle={lineStyle}
+      />
       <div className="album py-5 bg-light">
         <div className="container">
           <div className="row">
