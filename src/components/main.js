@@ -10,13 +10,15 @@ class Main extends React.Component {
     this.state = {
       ships: [],
       planets: [],
-      planet: []
+      planets1: [],
+      planets2: [],
+      planets3: []
     };
   }
 
   getNumOfItems = (arr, num) => {
-    return arr.filter(item => {
-      return arr.indexOf(item) < num;
+    return arr.filter((item, index) => {
+      return index < num;
     });
   };
 
@@ -35,8 +37,18 @@ class Main extends React.Component {
     return axios.get("https://swapi.co/api/planets/?page=1").then(response => {
       console.log(response.data.results);
       this.setState({
-        planets: this.getNumOfItems(response.data.results, 3),
-        planet: response.data.results[0]
+        planets: response.data.results,
+        planets1: this.getNumOfItems(response.data.results, 3),
+        planets2: [
+          response.data.results[3],
+          response.data.results[4],
+          response.data.results[5]
+        ],
+        planets3: [
+          response.data.results[6],
+          response.data.results[7],
+          response.data.results[8]
+        ]
       });
     });
   };
@@ -54,11 +66,29 @@ class Main extends React.Component {
     this.getPlanets();
     this.getPeople();
   }
+
+  getResource = (searched, fromApi) => {
+    let randIndex = Math.floor(Math.random() * searched.length);
+    let findName = searched.find(({ name }) => {
+      return name === fromApi;
+    });
+    if (findName === undefined) {
+      return searched[randIndex];
+    } else {
+      return findName;
+    }
+  };
   render() {
     return (
       <section className="main">
-        <Ships ships={this.state.ships} />
-        <Planets planets={this.state.planets} planetInfo={this.state.planet} />
+        <Ships ships={this.state.ships} getResource={this.getResource} />
+        <Planets
+          planets={this.state.planets}
+          planets1={this.state.planets1}
+          planets2={this.state.planets2}
+          planets3={this.state.planets3}
+          getResource={this.getResource}
+        />
       </section>
     );
   }

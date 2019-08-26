@@ -76,6 +76,24 @@ $desktop: 1024px;
 }
 
 //HEADER COMPONENT
+
+.header {
+  height: 100%;
+  color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .top-logo {
+    width: 12rem;
+    height: 4.7rem;
+    margin: 5rem;
+    align-self: flex-start;
+  }
+}
+
+//TITLE COMPONENT
+
 .title {
   display: flex;
   flex-direction: column;
@@ -109,19 +127,12 @@ $desktop: 1024px;
   }
 }
 
-.header {
-  height: 100%;
-  color: var(--secondary-color);
+//SEARCH COMPONENT
+
+.search {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  .top-logo {
-    width: 12rem;
-    height: 4.7rem;
-    margin: 5rem;
-    align-self: flex-start;
-  }
 
   .search-text {
     display: block;

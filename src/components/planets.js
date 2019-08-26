@@ -3,18 +3,6 @@ import planets from "../data/planetData";
 import Title from "./title";
 
 function Planets(props) {
-  const getResource = (searched, fromApi) => {
-    let randIndex = Math.floor(Math.random() * searched.length);
-    let findName = searched.find(({ name }) => {
-      return name === fromApi;
-    });
-    if (findName === undefined) {
-      return searched[randIndex];
-    } else {
-      return findName;
-    }
-  };
-
   const lineStyle = {
     width: 90,
     border: "3px solid",
@@ -44,14 +32,16 @@ function Planets(props) {
           <div className="carousel-item active">
             <div className="container">
               <div className="card-deck mb-3 text-center">
-                {props.planets.map(planet => {
+                {props.planets1.map(planet => {
                   return (
                     <div
                       key={planet.url}
                       className="card mb-4 shadow-sm"
                       style={{
                         backgroundImage: `url(${
-                          Object.values(getResource(planets, planet.name))[2]
+                          Object.values(
+                            props.getResource(planets, planet.name)
+                          )[2]
                         })`,
                         backgroundPosition: "center",
                         backgroundSize: "cover",
@@ -71,14 +61,16 @@ function Planets(props) {
           <div className="carousel-item ">
             <div className="container">
               <div className="card-deck mb-3 text-center">
-                {props.planets.map(planet => {
+                {props.planets2.map(planet => {
                   return (
                     <div
                       key={planet.url}
                       className="card mb-4 shadow-sm"
                       style={{
                         backgroundImage: `url(${
-                          Object.values(getResource(planets, planet.name))[2]
+                          Object.values(
+                            props.getResource(planets, planet.name)
+                          )[2]
                         })`,
                         backgroundPosition: "center",
                         backgroundSize: "cover",
@@ -98,14 +90,16 @@ function Planets(props) {
           <div className="carousel-item ">
             <div className="container">
               <div className="card-deck mb-3 text-center">
-                {props.planets.map(planet => {
+                {props.planets3.map(planet => {
                   return (
                     <div
                       key={planet.url}
                       className="card mb-4 shadow-sm"
                       style={{
                         backgroundImage: `url(${
-                          Object.values(getResource(planets, planet.name))[2]
+                          Object.values(
+                            props.getResource(planets, planet.name)
+                          )[2]
                         })`,
                         backgroundPosition: "center",
                         backgroundSize: "cover",

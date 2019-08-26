@@ -3,18 +3,6 @@ import starShips from "../data/shipData";
 import Title from "./title";
 
 function Ships(props) {
-  const getResource = (searched, fromApi) => {
-    let randIndex = Math.floor(Math.random() * searched.length);
-    let findName = searched.find(({ name }) => {
-      return name === fromApi;
-    });
-    if (findName === undefined) {
-      return searched[randIndex];
-    } else {
-      return findName;
-    }
-  };
-
   const lineStyle = {
     width: 90,
     border: "3px solid",
@@ -43,14 +31,22 @@ function Ships(props) {
                   <div className="card mb-4 box-shadow">
                     <img
                       className="card-img-top embed-responsive-item"
-                      src={Object.values(getResource(starShips, ship.name))[3]}
+                      src={
+                        Object.values(
+                          props.getResource(starShips, ship.name)
+                        )[3]
+                      }
                       alt={ship.name}
                     />
                     <div className="card-body">
                       <div className=" card-inner">
                         <h2 className="card-title">{ship.name}</h2>
                         <p className="card-text">
-                          {Object.values(getResource(starShips, ship.name))[2]}
+                          {
+                            Object.values(
+                              props.getResource(starShips, ship.name)
+                            )[2]
+                          }
                         </p>
                         <a href="#" className="card-link">
                           Read more ➜
