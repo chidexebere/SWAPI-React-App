@@ -317,3 +317,19 @@ $desktop: 1024px;
 .carousel-caption {
   padding-bottom: 0;
 }
+
+.viewMoreBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.7rem 0 3rem;
+
+  .btn {
+    width: 33%;
+    font-weight: 400;
+    border: 2px solid;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+  }
+}

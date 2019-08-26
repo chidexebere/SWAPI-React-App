@@ -1,6 +1,7 @@
 import React from "react";
 import starShips from "../data/shipData";
 import Title from "./title";
+import ViewMoreBtn from "./viewMoreBtn";
 
 function Ships(props) {
   const lineStyle = {
@@ -60,6 +61,8 @@ function Ships(props) {
           </div>
         </div>
       </div>
+
+      <ViewMoreBtn></ViewMoreBtn>
     </section>
   );
 }
