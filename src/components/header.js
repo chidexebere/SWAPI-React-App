@@ -13,6 +13,7 @@ function Header(props) {
         text="Directory"
         img={logo}
         imgAlt="Star Wars Logo"
+        titleStyle={{ margin: 0 }}
       />
       <Search />
     </section>

@@ -9,7 +9,7 @@
 :root {
   --main-color: #e5e5e5;
   --secondary-color: white;
-  --main-text-color: #777;
+  --main-text-color: #666;
   --secondary-text-color: #444;
   --card-color: #ccc;
   --link-hover-color: #000;
@@ -98,7 +98,7 @@ $desktop: 1024px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1rem;
+  margin: 1rem 0 4rem;
   .title-head {
     display: flex;
     flex-direction: row;
@@ -223,6 +223,8 @@ $desktop: 1024px;
 
 .bg-light {
   background-color: var(--secondary-color) !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 
   .container {
     @include tablet {
@@ -292,8 +294,6 @@ $desktop: 1024px;
 //PLANETS COMPONENT
 
 .carousel {
-  margin-top: 4rem;
-
   .carousel-inner {
     padding: 0 5rem 5rem;
 
@@ -322,7 +322,7 @@ $desktop: 1024px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1.7rem 0 3rem;
+  margin: 5rem 0 3rem;
 
   .btn {
     width: 33%;
@@ -331,5 +331,46 @@ $desktop: 1024px;
     padding: 1rem;
     font-size: 1.5rem;
     border-radius: 0.5rem;
+  }
+}
+
+//PEOPLE COMPONENT
+.col-md-6 {
+  .col-auto {
+    flex: 2 0 auto;
+    height: 40rem;
+  }
+
+  .col {
+    flex-grow: 1;
+    background-color: var(--main-color);
+  }
+
+  .p-4 {
+    padding: 5rem 1.5rem !important;
+    .mb-2 {
+      margin-bottom: 0 !important;
+    }
+
+    .text-success {
+      font-size: 2rem;
+      color: var(--secondary-text-color) !important;
+    }
+
+    .mb-1 {
+      margin-bottom: 3rem !important;
+    }
+
+    .mb-auto {
+      color: var(--main-text-color);
+      .stretched-link {
+        font-size: 1.5rem;
+        text-decoration: underline;
+        display: initial;
+        padding: 0;
+        color: var(--secondary-text-color) !important;
+        font-weight: bolder;
+      }
+    }
   }
 }

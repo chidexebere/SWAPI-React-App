@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import Ships from "./ships";
 import Planets from "./planets";
+import People from "./people";
 
 class Main extends React.Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class Main extends React.Component {
       planets: [],
       planets1: [],
       planets2: [],
-      planets3: []
+      planets3: [],
+      people: []
     };
   }
 
@@ -56,7 +58,7 @@ class Main extends React.Component {
   getPeople = () => {
     return axios.get("https://swapi.co/api/people/?page=1").then(response => {
       this.setState({
-        people: response.data.results
+        people: this.getNumOfItems(response.data.results, 4)
       });
     });
   };
@@ -89,6 +91,7 @@ class Main extends React.Component {
           planets3={this.state.planets3}
           getResource={this.getResource}
         />
+        <People people={this.state.people} getResource={this.getResource} />
       </section>
     );
   }
