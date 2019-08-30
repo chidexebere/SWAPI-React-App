@@ -1,4 +1,6 @@
 import React from "react";
+import Title from "./title";
+import Search from "./search";
 import logo from "../assets/logo.png";
 
 function Header(props) {
@@ -6,25 +8,14 @@ function Header(props) {
     <section className="header">
       <img className="top-logo" src={logo} alt="Star Wars Logo" />
 
-      <div className="title ">
-        <img className="middle-logo" src={logo} alt="Star Wars Logo" />
-        <h1 className="logo-title">Directory</h1>
-      </div>
-      <hr className="underline" />
-      <label className="search-text">
-        Find your favorite Characters, Films, Species, <br />
-        Starships and Planets
-      </label>
-
-      <div className="form-group has-search">
-        <span className="fa fa-search form-control-feedback" />
-        <input
-          type="text"
-          id="site-search"
-          className="form-control"
-          placeholder="Enter a search term"
-        />
-      </div>
+      <Title
+        displayTitleLogo={true}
+        text="Directory"
+        img={logo}
+        imgAlt="Star Wars Logo"
+        titleStyle={{ margin: 0 }}
+      />
+      <Search />
     </section>
   );
 }
