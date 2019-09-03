@@ -38,11 +38,15 @@ hr {
 a {
   text-decoration: none;
   display: inline-block;
-  padding: 1rem 3rem;
+  color: var(--main-text-color);
 }
 
-p,
-a {
+a:hover {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+p {
   font-size: 1.4rem;
 }
 
@@ -69,6 +73,11 @@ a {
       flex-basis: auto;
 }
 
+.home {
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
+}
+
 .header {
   height: 100%;
   color: var(--secondary-color);
@@ -85,11 +94,22 @@ a {
 }
 
 .header .top-logo {
-  width: 12rem;
-  height: 4.7rem;
   margin: 5rem;
   -ms-flex-item-align: start;
       align-self: flex-start;
+}
+
+.header .top-logo .top-logo-img {
+  width: 12rem;
+  height: 4.7rem;
+}
+
+.header .top-logo:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .title {
@@ -381,16 +401,20 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 5rem 0 3rem;
+  margin: 3rem 0 5rem;
 }
 
 .viewMoreBtn .btn {
   width: 33%;
-  font-weight: 400;
   border: 2px solid;
-  padding: 1rem;
   font-size: 1.5rem;
   border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.col-md-6 {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
 }
 
 .col-md-6 .col-auto {

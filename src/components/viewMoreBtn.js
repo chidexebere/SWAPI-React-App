@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function ViewMoreBtn(props) {
   return (
     <section className="viewMoreBtn">
-      <button type="button" className="btn btn-outline-secondary">
+      <Link className="btn btn-outline-dark" to={props.path}>
         VIEW MORE
-      </button>
+      </Link>
     </section>
   );
 }

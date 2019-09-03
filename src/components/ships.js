@@ -1,7 +1,6 @@
 import React from "react";
 import starShips from "../data/shipData";
 import Title from "./title";
-import ViewMoreBtn from "./viewMoreBtn";
 
 function Ships(props) {
   const lineStyle = {
@@ -26,7 +25,7 @@ function Ships(props) {
       <div className="album py-5 bg-light">
         <div className="container">
           <div className="row">
-            {props.ships.map(ship => {
+            {props.shipsData.map(ship => {
               return (
                 <div key={ship.url} className="col-md-4">
                   <div className="card mb-4 box-shadow">
@@ -61,8 +60,6 @@ function Ships(props) {
           </div>
         </div>
       </div>
-
-      <ViewMoreBtn></ViewMoreBtn>
     </section>
   );
 }

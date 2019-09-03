@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Title from "./title";
 import Search from "./search";
 import logo from "../assets/logo.png";
@@ -6,7 +7,9 @@ import logo from "../assets/logo.png";
 function Header(props) {
   return (
     <section className="header">
-      <img className="top-logo" src={logo} alt="Star Wars Logo" />
+      <Link className="top-logo" to="/">
+        <img className="top-logo-img" src={logo} alt="Star Wars Logo" />
+      </Link>
 
       <Title
         displayTitleLogo={true}

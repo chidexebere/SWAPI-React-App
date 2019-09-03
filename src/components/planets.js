@@ -32,7 +32,7 @@ function Planets(props) {
           <div className="carousel-item active">
             <div className="container">
               <div className="card-deck mb-3 text-center">
-                {props.planets1.map(planet => {
+                {props.planetsData1.map(planet => {
                   return (
                     <div
                       key={planet.url}
@@ -61,7 +61,7 @@ function Planets(props) {
           <div className="carousel-item ">
             <div className="container">
               <div className="card-deck mb-3 text-center">
-                {props.planets2.map(planet => {
+                {props.planetsData2.map(planet => {
                   return (
                     <div
                       key={planet.url}
@@ -90,7 +90,7 @@ function Planets(props) {
           <div className="carousel-item ">
             <div className="container">
               <div className="card-deck mb-3 text-center">
-                {props.planets3.map(planet => {
+                {props.planetsData3.map(planet => {
                   return (
                     <div
                       key={planet.url}

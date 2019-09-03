@@ -4,19 +4,6 @@ import "./App.css";
 import Header from "./components/header";
 import Main from "./components/main";
 
-// class App extends React.Component {
-//   render() {
-//     return (
-//       <div className="app">
-//         <Header />
-//         <Main />
-//       </div>
-//     );
-//   }
-// }
-
-// export default App;
-
 class App extends React.Component {
   render() {
     return (
@@ -24,7 +11,16 @@ class App extends React.Component {
         <div className="app">
           <Header />
           <Switch>
-            <Route path="/" component={Main} exact />
+            <Route exact path="/" component={Main} />
+            <Route path="/ships" render={() => <Main displayShips={true} />} />
+            <Route
+              path="/planets"
+              render={() => <Main displayPlanets={true} />}
+            />
+            <Route
+              path="/people"
+              render={() => <Main displayPeople={true} />}
+            />
           </Switch>
         </div>
       </BrowserRouter>
