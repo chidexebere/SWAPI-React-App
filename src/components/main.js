@@ -11,14 +11,11 @@ class Main extends React.Component {
 
     this.state = {
       ships: [],
-      ships1: [],
       planets: [],
-      planets1: [],
       planets2: [],
       planets3: [],
       people: [],
-      people1: [],
-      loading: false,
+      isLoading: false,
       error: null
     };
   }
@@ -33,10 +30,8 @@ class Main extends React.Component {
     return axios
       .get("https://swapi.co/api/starships/?page=1")
       .then(response => {
-        console.log(this.getNumOfItems(response.data.results, 6));
         this.setState({
-          ships: response.data.results,
-          ships1: this.getNumOfItems(response.data.results, 6)
+          ships: response.data.results
         });
       })
       .catch(error => this.setState({ error, isLoading: false }));
@@ -46,10 +41,9 @@ class Main extends React.Component {
     return axios
       .get("https://swapi.co/api/planets/?page=1")
       .then(response => {
-        console.log(response.data.results);
+        console.log(response.data.results[3]);
         this.setState({
           planets: response.data.results,
-          planets1: this.getNumOfItems(response.data.results, 3),
           planets2: [
             response.data.results[3],
             response.data.results[4],
@@ -70,8 +64,7 @@ class Main extends React.Component {
       .get("https://swapi.co/api/people/?page=1")
       .then(response => {
         this.setState({
-          people: response.data.results,
-          people1: this.getNumOfItems(response.data.results, 4)
+          people: response.data.results
         });
       })
       .catch(error => this.setState({ error, isLoading: false }));
@@ -95,20 +88,29 @@ class Main extends React.Component {
     }
   };
   render() {
+    const {
+      isLoading,
+      ships,
+      planets,
+      planets2,
+      planets3,
+      people,
+      error
+    } = this.state;
     if (this.props.displayShips) {
       return (
         <React.Fragment>
-          <Ships shipsData={this.state.ships} getResource={this.getResource} />
+          <Ships shipsData={ships} getResource={this.getResource} />
         </React.Fragment>
       );
     } else if (this.props.displayPlanets) {
       return (
         <React.Fragment>
           <Planets
-            planetsData={this.state.planets}
-            planets1={this.state.planets1}
-            planets2={this.state.planets2}
-            planets3={this.state.planets3}
+            planetsData={planets}
+            planets1={this.getNumOfItems(planets, 3)}
+            planets2={planets2}
+            planets3={planets3}
             getResource={this.getResource}
           />
         </React.Fragment>
@@ -116,21 +118,18 @@ class Main extends React.Component {
     } else if (this.props.displayPeople) {
       return (
         <React.Fragment>
-          <People
-            peopleData={this.state.people}
-            getResource={this.getResource}
-          />
+          <People peopleData={people} getResource={this.getResource} />
         </React.Fragment>
       );
     } else {
       return (
         <React.Fragment>
           <Home
-            ships1={this.state.ships1}
-            planets1={this.state.planets1}
-            planets2={this.state.planets2}
-            planets3={this.state.planets3}
-            people1={this.state.people1}
+            ships1={this.getNumOfItems(ships, 6)}
+            planets1={this.getNumOfItems(planets, 3)}
+            planets2={planets2}
+            planets3={planets3}
+            people1={this.getNumOfItems(people, 4)}
             getResource={this.getResource}
           />
         </React.Fragment>
