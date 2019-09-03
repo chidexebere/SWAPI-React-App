@@ -1,7 +1,6 @@
 import React from "react";
 import people from "../data/peopleData";
 import Title from "./title";
-import ViewMoreBtn from "./viewMoreBtn";
 
 function People(props) {
   const lineStyle = {
@@ -25,7 +24,7 @@ function People(props) {
       />
       <div className="container">
         <div className="row mb-2">
-          {props.people.map(char => {
+          {props.peopleData.map(char => {
             return (
               <div key={char.url} className="col-md-6">
                 <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -62,8 +61,6 @@ function People(props) {
           })}
         </div>
       </div>
-
-      <ViewMoreBtn />
     </section>
   );
 }
