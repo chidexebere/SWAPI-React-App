@@ -4,7 +4,7 @@ import Ships from "./ships";
 import Planets from "./planets";
 import People from "./people";
 
-class Home extends React.Component {
+class Main extends React.Component {
   constructor(props) {
     super(props);
 
@@ -82,7 +82,7 @@ class Home extends React.Component {
   };
   render() {
     return (
-      <section className="home">
+      <section className="main">
         <Ships ships={this.state.ships} getResource={this.getResource} />
         <Planets
           planets={this.state.planets}
@@ -97,4 +97,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default Main;

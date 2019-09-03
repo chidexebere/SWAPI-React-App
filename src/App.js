@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Header from "./components/header";
-import Home from "./components/home";
+import Main from "./components/main";
 
 // class App extends React.Component {
 //   render() {
@@ -24,7 +24,7 @@ class App extends React.Component {
         <div className="app">
           <Header />
           <Switch>
-            <Route path="/" component={Home} exact />
+            <Route path="/" component={Main} exact />
           </Switch>
         </div>
       </BrowserRouter>
