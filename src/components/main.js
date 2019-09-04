@@ -80,7 +80,7 @@ class Main extends React.Component {
     }
   };
   render() {
-    const { isLoading, ships, planets, people} = this.state;
+    const { isLoading, ships, planets, people } = this.state;
     if (!isLoading) {
       if (this.props.displayShips) {
         return (

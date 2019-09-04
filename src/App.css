@@ -63,20 +63,27 @@ p {
           flex-direction: column;
 }
 
-.header {
+.app .header {
   -ms-flex-preferred-size: 60rem;
       flex-basis: 60rem;
   background-image: url(./assets/hero-banner.jpg);
 }
 
-.main {
+.app .main {
   -ms-flex-preferred-size: auto;
       flex-basis: auto;
 }
 
-.home {
+.app .home {
   -ms-flex-preferred-size: auto;
       flex-basis: auto;
+}
+
+.app .footer {
+  -ms-flex-preferred-size: 7rem;
+      flex-basis: 7rem;
+  background-color: var(--card-color);
+  border-top: 1px solid #888;
 }
 
 .header {
@@ -463,7 +470,7 @@ p {
   font-weight: bolder;
 }
 
-.loader {
+.spinner {
   border: 0.5rem solid var(--main-color);
   border-top: 0.5rem solid palevioletred;
   border-radius: 50%;

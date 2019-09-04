@@ -6,7 +6,7 @@ import logo from "../assets/logo.png";
 
 function Header(props) {
   return (
-    <section className="header">
+    <header className="header">
       <Link className="top-logo" to="/">
         <img className="top-logo-img" src={logo} alt="Star Wars Logo" />
       </Link>
@@ -19,7 +19,7 @@ function Header(props) {
         titleStyle={{ margin: 0 }}
       />
       <Search />
-    </section>
+    </header>
   );
 }
 

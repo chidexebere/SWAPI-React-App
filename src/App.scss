@@ -70,18 +70,23 @@ $desktop: 1024px;
   background-color: var(--secondary-color);
   display: flex;
   flex-direction: column;
-}
-.header {
-  flex-basis: 60rem;
-  background-image: url(./assets/hero-banner.jpg);
-}
 
-.main {
-  flex-basis: auto;
-}
+  .header {
+    flex-basis: 60rem;
+    background-image: url(./assets/hero-banner.jpg);
+  }
+  .main {
+    flex-basis: auto;
+  }
 
-.home {
-  flex-basis: auto;
+  .home {
+    flex-basis: auto;
+  }
+  .footer {
+    flex-basis: 7rem;
+    background-color: var(--card-color);
+    border-top: 1px solid #888;
+  }
 }
 
 //HEADER COMPONENT
@@ -395,7 +400,7 @@ $desktop: 1024px;
 }
 
 //SPINNER COMPONENT
-.loader {
+.spinner {
   border: 0.5rem solid var(--main-color);
   border-top: 0.5rem solid palevioletred;
   border-radius: 50%;
