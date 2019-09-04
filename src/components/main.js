@@ -12,17 +12,15 @@ class Main extends React.Component {
     this.state = {
       ships: [],
       planets: [],
-      planets2: [],
-      planets3: [],
       people: [],
       isLoading: false,
       error: null
     };
   }
 
-  getNumOfItems = (arr, num) => {
+  getNumOfItems = (arr, startIndex, endIndex) => {
     return arr.filter((item, index) => {
-      return index < num;
+      return index >= startIndex && index <= endIndex;
     });
   };
 
@@ -30,6 +28,7 @@ class Main extends React.Component {
     return axios
       .get("https://swapi.co/api/starships/?page=1")
       .then(response => {
+        console.log(response.data.results);
         this.setState({
           ships: response.data.results
         });
@@ -41,19 +40,8 @@ class Main extends React.Component {
     return axios
       .get("https://swapi.co/api/planets/?page=1")
       .then(response => {
-        console.log(response.data.results[3]);
         this.setState({
-          planets: response.data.results,
-          planets2: [
-            response.data.results[3],
-            response.data.results[4],
-            response.data.results[5]
-          ],
-          planets3: [
-            response.data.results[6],
-            response.data.results[7],
-            response.data.results[8]
-          ]
+          planets: response.data.results
         });
       })
       .catch(error => this.setState({ error, isLoading: false }));
@@ -88,15 +76,7 @@ class Main extends React.Component {
     }
   };
   render() {
-    const {
-      isLoading,
-      ships,
-      planets,
-      planets2,
-      planets3,
-      people,
-      error
-    } = this.state;
+    const { isLoading, ships, planets, people, error } = this.state;
     if (this.props.displayShips) {
       return (
         <React.Fragment>
@@ -106,13 +86,7 @@ class Main extends React.Component {
     } else if (this.props.displayPlanets) {
       return (
         <React.Fragment>
-          <Planets
-            planetsData={planets}
-            planets1={this.getNumOfItems(planets, 3)}
-            planets2={planets2}
-            planets3={planets3}
-            getResource={this.getResource}
-          />
+          <Planets planetsData={planets} getResource={this.getResource} />
         </React.Fragment>
       );
     } else if (this.props.displayPeople) {
@@ -125,11 +99,11 @@ class Main extends React.Component {
       return (
         <React.Fragment>
           <Home
-            ships1={this.getNumOfItems(ships, 6)}
-            planets1={this.getNumOfItems(planets, 3)}
-            planets2={planets2}
-            planets3={planets3}
-            people1={this.getNumOfItems(people, 4)}
+            ships1={this.getNumOfItems(ships, 0, 5)}
+            planets1={this.getNumOfItems(planets, 0, 2)}
+            planets2={this.getNumOfItems(planets, 3, 5)}
+            planets3={this.getNumOfItems(planets, 6, 8)}
+            people1={this.getNumOfItems(people, 0, 3)}
             getResource={this.getResource}
           />
         </React.Fragment>
