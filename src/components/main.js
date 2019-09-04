@@ -4,6 +4,7 @@ import Ships from "./ships";
 import Planets from "./planets";
 import People from "./people";
 import Home from "./home";
+import Spinner from "./spinner";
 
 class Main extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class Main extends React.Component {
       ships: [],
       planets: [],
       people: [],
-      isLoading: false,
+      isLoading: true,
       error: null
     };
   }
@@ -30,7 +31,8 @@ class Main extends React.Component {
       .then(response => {
         console.log(response.data.results);
         this.setState({
-          ships: response.data.results
+          ships: response.data.results,
+          isLoading: false
         });
       })
       .catch(error => this.setState({ error, isLoading: false }));
@@ -41,7 +43,8 @@ class Main extends React.Component {
       .get("https://swapi.co/api/planets/?page=1")
       .then(response => {
         this.setState({
-          planets: response.data.results
+          planets: response.data.results,
+          isLoading: false
         });
       })
       .catch(error => this.setState({ error, isLoading: false }));
@@ -52,7 +55,8 @@ class Main extends React.Component {
       .get("https://swapi.co/api/people/?page=1")
       .then(response => {
         this.setState({
-          people: response.data.results
+          people: response.data.results,
+          isLoading: false
         });
       })
       .catch(error => this.setState({ error, isLoading: false }));
@@ -76,38 +80,42 @@ class Main extends React.Component {
     }
   };
   render() {
-    const { isLoading, ships, planets, people, error } = this.state;
-    if (this.props.displayShips) {
-      return (
-        <React.Fragment>
-          <Ships shipsData={ships} getResource={this.getResource} />
-        </React.Fragment>
-      );
-    } else if (this.props.displayPlanets) {
-      return (
-        <React.Fragment>
-          <Planets planetsData={planets} getResource={this.getResource} />
-        </React.Fragment>
-      );
-    } else if (this.props.displayPeople) {
-      return (
-        <React.Fragment>
-          <People peopleData={people} getResource={this.getResource} />
-        </React.Fragment>
-      );
+    const { isLoading, ships, planets, people} = this.state;
+    if (!isLoading) {
+      if (this.props.displayShips) {
+        return (
+          <React.Fragment>
+            <Ships shipsData={ships} getResource={this.getResource} />
+          </React.Fragment>
+        );
+      } else if (this.props.displayPlanets) {
+        return (
+          <React.Fragment>
+            <Planets planetsData={planets} getResource={this.getResource} />
+          </React.Fragment>
+        );
+      } else if (this.props.displayPeople) {
+        return (
+          <React.Fragment>
+            <People peopleData={people} getResource={this.getResource} />
+          </React.Fragment>
+        );
+      } else {
+        return (
+          <React.Fragment>
+            <Home
+              ships1={this.getNumOfItems(ships, 0, 5)}
+              planets1={this.getNumOfItems(planets, 0, 2)}
+              planets2={this.getNumOfItems(planets, 3, 5)}
+              planets3={this.getNumOfItems(planets, 6, 8)}
+              people1={this.getNumOfItems(people, 0, 3)}
+              getResource={this.getResource}
+            />
+          </React.Fragment>
+        );
+      }
     } else {
-      return (
-        <React.Fragment>
-          <Home
-            ships1={this.getNumOfItems(ships, 0, 5)}
-            planets1={this.getNumOfItems(planets, 0, 2)}
-            planets2={this.getNumOfItems(planets, 3, 5)}
-            planets3={this.getNumOfItems(planets, 6, 8)}
-            people1={this.getNumOfItems(people, 0, 3)}
-            getResource={this.getResource}
-          />
-        </React.Fragment>
-      );
+      return <Spinner />;
     }
   }
 }
