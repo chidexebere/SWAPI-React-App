@@ -21,6 +21,7 @@ function Planets(props) {
         text="Popular Planets"
         textStyle={textStyle}
         lineStyle={lineStyle}
+        path="/planets"
       />
       <div id="demo" className="carousel slide" data-ride="carousel">
         <ul className="carousel-indicators">
@@ -33,15 +34,14 @@ function Planets(props) {
             <div className="container">
               <div className="card-deck mb-3 text-center">
                 {props.planetsData1.map(planet => {
+                  const { url, name } = planet;
                   return (
                     <div
-                      key={planet.url}
+                      key={url}
                       className="card mb-4 shadow-sm"
                       style={{
                         backgroundImage: `url(${
-                          Object.values(
-                            props.getResource(planets, planet.name)
-                          )[2]
+                          Object.values(props.getResource(planets, name))[2]
                         })`,
                         backgroundPosition: "center",
                         backgroundSize: "cover",
@@ -49,7 +49,7 @@ function Planets(props) {
                       }}
                     >
                       <div className="carousel-caption">
-                        <h1>{planet.name}</h1>
+                        <h1>{name}</h1>
                       </div>
                     </div>
                   );
@@ -62,15 +62,14 @@ function Planets(props) {
             <div className="container">
               <div className="card-deck mb-3 text-center">
                 {props.planetsData2.map(planet => {
+                  const { url, name } = planet;
                   return (
                     <div
-                      key={planet.url}
+                      key={url}
                       className="card mb-4 shadow-sm"
                       style={{
                         backgroundImage: `url(${
-                          Object.values(
-                            props.getResource(planets, planet.name)
-                          )[2]
+                          Object.values(props.getResource(planets, name))[2]
                         })`,
                         backgroundPosition: "center",
                         backgroundSize: "cover",
@@ -78,7 +77,7 @@ function Planets(props) {
                       }}
                     >
                       <div className="carousel-caption">
-                        <h1>{planet.name}</h1>
+                        <h1>{name}</h1>
                       </div>
                     </div>
                   );
@@ -91,15 +90,14 @@ function Planets(props) {
             <div className="container">
               <div className="card-deck mb-3 text-center">
                 {props.planetsData3.map(planet => {
+                  const { url, name } = planet;
                   return (
                     <div
-                      key={planet.url}
+                      key={url}
                       className="card mb-4 shadow-sm"
                       style={{
                         backgroundImage: `url(${
-                          Object.values(
-                            props.getResource(planets, planet.name)
-                          )[2]
+                          Object.values(props.getResource(planets, name))[2]
                         })`,
                         backgroundPosition: "center",
                         backgroundSize: "cover",
@@ -107,7 +105,7 @@ function Planets(props) {
                       }}
                     >
                       <div className="carousel-caption">
-                        <h1>{planet.name}</h1>
+                        <h1>{name}</h1>
                       </div>
                     </div>
                   );

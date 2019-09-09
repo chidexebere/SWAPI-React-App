@@ -12,8 +12,10 @@
   --secondary-color: white;
   --main-text-color: #666;
   --secondary-text-color: #444;
+  --title-text-color: #222;
   --card-color: #ccc;
-  --link-hover-color: #000;
+  --link-hover1-color: palevioletred;
+  --link-hover2-color: #000;
 }
 
 *,
@@ -164,6 +166,11 @@ p {
   margin: 0;
   padding-left: 1.5rem;
   font-weight: bold;
+  color: var(--title-text-color);
+}
+
+.title .title-head .title-text .title-text:hover {
+  color: var(--link-hover1-color);
 }
 
 .title .underline {
@@ -356,10 +363,11 @@ p {
 }
 
 .bg-light .container .col-md-4 .card-body .card-inner .card-title {
-  color: var(--secondary-text-color);
+  color: var(--title-text-color);
 }
 
 .bg-light .container .col-md-4 .card-body .card-inner .card-text {
+  margin-top: 1rem;
   height: 7rem;
 }
 
@@ -372,7 +380,7 @@ p {
 }
 
 .bg-light .container .col-md-4 .card-body .card-inner .card-link:hover {
-  background-color: var(--link-hover-color);
+  background-color: var(--link-hover2-color);
   color: var(--secondary-color);
 }
 
@@ -422,8 +430,8 @@ p {
 }
 
 .col-md-6 {
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
+  padding-right: 0.8rem;
+  padding-left: 0.8rem;
 }
 
 .col-md-6 .col-auto {
@@ -472,7 +480,7 @@ p {
 
 .spinner {
   border: 0.5rem solid var(--main-color);
-  border-top: 0.5rem solid palevioletred;
+  border-top: 0.5rem solid var(--link-hover1-color);
   border-radius: 50%;
   width: 5rem;
   height: 5rem;
@@ -548,6 +556,6 @@ p {
 }
 
 .pagination-cover .pagination .page-link:hover {
-  color: var(--link-hover-color);
+  color: var(--link-hover2-color);
 }
 /*# sourceMappingURL=App.css.map */

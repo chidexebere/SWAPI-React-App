@@ -7,8 +7,6 @@ import Home from "./home";
 import Spinner from "./spinner";
 import Pagination from "./pagination";
 
-let ships, planets, people;
-
 class Main extends React.Component {
   constructor(props) {
     super(props);

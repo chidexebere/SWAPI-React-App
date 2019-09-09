@@ -11,8 +11,10 @@
   --secondary-color: white;
   --main-text-color: #666;
   --secondary-text-color: #444;
+  --title-text-color: #222;
   --card-color: #ccc;
-  --link-hover-color: #000;
+  --link-hover1-color: palevioletred;
+  --link-hover2-color: #000;
 }
 
 *,
@@ -140,6 +142,11 @@ $desktop: 1024px;
       margin: 0;
       padding-left: 1.5rem;
       font-weight: bold;
+      color: var(--title-text-color);
+
+      .title-text:hover {
+        color: var(--link-hover1-color);
+      }
     }
   }
 
@@ -290,10 +297,11 @@ $desktop: 1024px;
           flex-direction: column;
 
           .card-title {
-            color: var(--secondary-text-color);
+            color: var(--title-text-color);
           }
 
           .card-text {
+            margin-top: 1rem;
             height: 7rem;
           }
 
@@ -305,7 +313,7 @@ $desktop: 1024px;
           }
 
           .card-link:hover {
-            background-color: var(--link-hover-color);
+            background-color: var(--link-hover2-color);
             color: var(--secondary-color);
           }
         }
@@ -358,8 +366,8 @@ $desktop: 1024px;
 
 //PEOPLE COMPONENT
 .col-md-6 {
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
+  padding-right: 0.8rem;
+  padding-left: 0.8rem;
   .col-auto {
     flex: 2 0 auto;
     height: 40rem;
@@ -402,7 +410,7 @@ $desktop: 1024px;
 //SPINNER COMPONENT
 .spinner {
   border: 0.5rem solid var(--main-color);
-  border-top: 0.5rem solid palevioletred;
+  border-top: 0.5rem solid var(--link-hover1-color);
   border-radius: 50%;
   width: 5rem;
   height: 5rem;
@@ -457,7 +465,7 @@ $desktop: 1024px;
     }
 
     .page-link:hover {
-      color: var(--link-hover-color);
+      color: var(--link-hover2-color);
     }
   }
 }

@@ -21,18 +21,20 @@ function People(props) {
         text="Popular Character"
         textStyle={textStyle}
         lineStyle={lineStyle}
+        path="/people"
       />
       <div className="container">
         <div className="row mb-2">
           {props.peopleData.map(char => {
+            const { url, name, birth_year, gender } = char;
             return (
-              <div key={char.url} className="col-md-6">
+              <div key={url} className="col-md-6">
                 <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                   <div
                     className="col-auto d-none d-lg-block"
                     style={{
                       backgroundImage: `url(${
-                        Object.values(props.getResource(people, char.name))[4]
+                        Object.values(props.getResource(people, name))[4]
                       })`,
                       backgroundPosition: "center",
                       backgroundSize: "cover",
@@ -41,15 +43,19 @@ function People(props) {
                   ></div>
                   <div className="col p-4 d-flex flex-column position-static">
                     <strong className="d-inline-block mb-2 text-success">
-                      {char.name}
+                      {name}
                     </strong>
+                    <small className="text-muted">
+                      <strong>Born:</strong> {birth_year}
+                    </small>
+                    <small className="text-muted">
+                      <strong>Gender:</strong> {gender}
+                    </small>
                     <div className="mb-1 text-muted">
-                      <i>
-                        {Object.values(props.getResource(people, char.name))[2]}
-                      </i>
+                      <i>{Object.values(props.getResource(people, name))[2]}</i>
                     </div>
                     <p className="mb-auto">
-                      {Object.values(props.getResource(people, char.name))[3]}
+                      {Object.values(props.getResource(people, name))[3]}
                       <a href="#" className="stretched-link">
                         <strong>Read More</strong>
                       </a>

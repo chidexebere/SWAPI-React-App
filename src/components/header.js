@@ -17,6 +17,7 @@ function Header(props) {
         img={logo}
         imgAlt="Star Wars Logo"
         titleStyle={{ margin: 0 }}
+        textStyle={{ color: "white" }}
       />
       <Search />
     </header>

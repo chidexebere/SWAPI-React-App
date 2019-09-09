@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Title(props) {
   if (props.displayTitleLogo) {
@@ -6,7 +7,9 @@ function Title(props) {
       <section className="title" style={props.titleStyle}>
         <div className="title-head">
           <img className="title-logo" src={props.img} alt={props.imgAlt} />
-          <h1 className="title-text">{props.text}</h1>
+          <h1 className="title-text" style={props.textStyle}>
+            {props.text}
+          </h1>
         </div>
         <hr className="underline" style={props.lineStyle} />
       </section>
@@ -15,9 +18,11 @@ function Title(props) {
     return (
       <section className="title">
         <div className="title-head ">
-          <h1 className="title-text" style={props.textStyle}>
-            {props.text}
-          </h1>
+          <Link className="title-text" to={props.path}>
+            <h1 className="title-text" style={props.textStyle}>
+              {props.text}
+            </h1>
+          </Link>
         </div>
         <hr className="underline" style={props.lineStyle} />
       </section>
