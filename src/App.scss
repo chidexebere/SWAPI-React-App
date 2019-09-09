@@ -120,7 +120,7 @@ $desktop: 1024px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1rem 0 4rem;
+  margin: 2rem 0 5rem;
   .title-head {
     display: flex;
     flex-direction: row;
@@ -416,5 +416,48 @@ $desktop: 1024px;
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+//PAGINATION COMPONENT
+.pagination-cover {
+  display: flex;
+  justify-content: center;
+  margin: 6rem 1rem 5rem;
+
+  .page-number {
+    font-size: 3rem;
+    color: lighten(#666, 40%);
+    padding: 0.5rem 2rem;
+  }
+
+  .pagination {
+    display: flex;
+    font-size: 4rem;
+
+    .page-item:first-child .page-link {
+      border-top-left-radius: 0.8rem;
+      border-bottom-left-radius: 0.8rem;
+      border-right: 1px solid var(--card-color);
+    }
+
+    .page-item:last-child .page-link {
+      border-top-right-radius: 0.8rem;
+      border-bottom-right-radius: 0.8rem;
+      border-left: 1px solid var(--card-color);
+    }
+
+    .page-link {
+      padding: 1rem 2.5rem 1.5rem;
+      margin-left: 0;
+      line-height: 0.8;
+      color: lighten(#666, 20%);
+      border: 2px solid var(--card-color);
+      font-weight: 600;
+    }
+
+    .page-link:hover {
+      color: var(--link-hover-color);
+    }
   }
 }

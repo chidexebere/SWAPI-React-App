@@ -131,7 +131,7 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 1rem 0 4rem;
+  margin: 2rem 0 5rem;
 }
 
 .title .title-head {
@@ -501,5 +501,53 @@ p {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
+}
+
+.pagination-cover {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 6rem 1rem 5rem;
+}
+
+.pagination-cover .page-number {
+  font-size: 3rem;
+  color: #cccccc;
+  padding: 0.5rem 2rem;
+}
+
+.pagination-cover .pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 4rem;
+}
+
+.pagination-cover .pagination .page-item:first-child .page-link {
+  border-top-left-radius: 0.8rem;
+  border-bottom-left-radius: 0.8rem;
+  border-right: 1px solid var(--card-color);
+}
+
+.pagination-cover .pagination .page-item:last-child .page-link {
+  border-top-right-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+  border-left: 1px solid var(--card-color);
+}
+
+.pagination-cover .pagination .page-link {
+  padding: 1rem 2.5rem 1.5rem;
+  margin-left: 0;
+  line-height: 0.8;
+  color: #999999;
+  border: 2px solid var(--card-color);
+  font-weight: 600;
+}
+
+.pagination-cover .pagination .page-link:hover {
+  color: var(--link-hover-color);
 }
 /*# sourceMappingURL=App.css.map */
