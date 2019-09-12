@@ -1,6 +1,7 @@
 import React from "react";
 import people from "../data/peopleData";
 import Title from "./title";
+import Filter from "./filter";
 
 function People(props) {
   const lineStyle = {
@@ -23,6 +24,8 @@ function People(props) {
         lineStyle={lineStyle}
         path="/people"
       />
+
+      <Filter />
       <div className="container">
         <div className="row mb-2">
           {props.peopleData.map(char => {
