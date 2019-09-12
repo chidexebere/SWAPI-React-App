@@ -241,7 +241,11 @@ class Main extends React.Component {
       } else if (this.props.displayPeople) {
         return (
           <React.Fragment>
-            <People peopleData={people} getResource={this.getResource} />
+            <People
+              peopleData={people}
+              getResource={this.getResource}
+              displayFilter={true}
+            />
             <Pagination
               count={peopleCount}
               clickPrevious={this.handlePreviousPeople}
