@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Title from "./title";
-import Search from "./search";
-import logo from "../assets/logo.png";
+import Title from "../elements/title";
+import Search from "../elements/search";
+import logo from "../../assets/logo.png";
 
 function Header(props) {
   return (

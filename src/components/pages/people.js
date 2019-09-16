@@ -1,10 +1,10 @@
 import React from "react";
-import planets from "../data/planetData";
-import Title from "./title";
-import Carousel from "./carousel";
-import Grid from "./grid";
+import people from "../../data/peopleData";
+import Title from "../elements/title";
+import DropDown from "../elements/dropDown";
+import Grid from "../views/grid";
 
-function Planets(props) {
+function People(props) {
   const lineStyle = {
     width: 90,
     border: "3px solid",
@@ -16,44 +16,42 @@ function Planets(props) {
     paddingLeft: 0
   };
 
-  if (props.displayInGrid) {
+  if (props.displayFilter) {
     return (
-      <section className="planets">
+      <section className="people">
         <Title
           displayTitleLogo={false}
-          text="Popular Planets"
+          text="Starwars Characters"
           textStyle={textStyle}
           lineStyle={lineStyle}
-          path="/planets"
+          path="/people"
         />
-
+        <DropDown />
         <Grid
-          apiData={props.planetsData}
-          helpData={planets}
+          apiData={props.peopleData}
+          helpData={people}
           getResource={props.getResource}
         />
       </section>
     );
   } else {
     return (
-      <section className="planets">
+      <section className="people">
         <Title
           displayTitleLogo={false}
-          text="Popular Planets"
+          text="Popular Character"
           textStyle={textStyle}
           lineStyle={lineStyle}
-          path="/planets"
+          path="/people"
         />
 
-        <Carousel
-          apiData1={props.planetsData1}
-          apiData2={props.planetsData2}
-          apiData3={props.planetsData3}
-          helpData={planets}
+        <Grid
+          apiData={props.peopleData}
+          helpData={people}
           getResource={props.getResource}
         />
       </section>
     );
   }
 }
-export default Planets;
+export default People;

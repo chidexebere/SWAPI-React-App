@@ -1,11 +1,11 @@
 import React from "react";
 import axios from "axios";
-import Ships from "./ships";
-import Planets from "./planets";
-import People from "./people";
-import Home from "./home";
-import Spinner from "./spinner";
-import Pagination from "./pagination";
+import Ships from "../pages/ships";
+import Planets from "../pages/planets";
+import People from "../pages/people";
+import Home from "../pages/home";
+import Spinner from "../elements/spinner";
+import Pagination from "../elements/pagination";
 
 class Main extends React.Component {
   constructor(props) {

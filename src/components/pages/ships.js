@@ -1,6 +1,6 @@
 import React from "react";
-import starShips from "../data/shipData";
-import Title from "./title";
+import starShips from "../../data/shipData";
+import Title from "../elements/title";
 
 function Ships(props) {
   const lineStyle = {
