@@ -228,7 +228,11 @@ class Main extends React.Component {
       } else if (this.props.displayPlanets) {
         return (
           <React.Fragment>
-            <Planets planetsData={planets} getResource={this.getResource} />
+            <Planets
+              planetsData={planets}
+              getResource={this.getResource}
+              displayInGrid={true}
+            />
             <Pagination
               count={planetsCount}
               clickPrevious={this.handlePreviousPlanets}

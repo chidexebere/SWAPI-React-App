@@ -1,9 +1,9 @@
 import React from "react";
 //import { Link } from "react-router-dom";
 
-function Filter(props) {
+function DropDown(props) {
   return (
-    <section className="filter">
+    <section className="dropDown">
       {/* <Link to={props.path}></Link> */}
 
       <div className="dropdown">
@@ -33,4 +33,4 @@ function Filter(props) {
   );
 }
 
-export default Filter;
+export default DropDown;

@@ -1,0 +1,37 @@
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0 5rem;
+  .title-head {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+
+    .title-logo {
+      width: 12rem;
+      height: 4.7rem;
+      margin-bottom: 1rem;
+    }
+
+    .title-text {
+      font-size: 4rem;
+      margin: 0;
+      padding-left: 1.5rem;
+      font-weight: bold;
+      color: $title-text-color;
+
+      .title-text:hover {
+        color: $link-hover1-color;
+      }
+    }
+  }
+
+  .underline {
+    width: 30rem;
+    border: 1px solid $secondary-color;
+  }
+}

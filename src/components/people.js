@@ -1,7 +1,7 @@
 import React from "react";
 import people from "../data/peopleData";
 import Title from "./title";
-import Filter from "./filter";
+import DropDown from "./dropDown";
 import Grid from "./grid";
 
 function People(props) {
@@ -18,7 +18,7 @@ function People(props) {
 
   if (props.displayFilter) {
     return (
-      <section className="planets">
+      <section className="people">
         <Title
           displayTitleLogo={false}
           text="Starwars Characters"
@@ -26,7 +26,7 @@ function People(props) {
           lineStyle={lineStyle}
           path="/people"
         />
-        <Filter />
+        <DropDown />
         <Grid
           apiData={props.peopleData}
           helpData={people}
@@ -36,7 +36,7 @@ function People(props) {
     );
   } else {
     return (
-      <section className="planets">
+      <section className="people">
         <Title
           displayTitleLogo={false}
           text="Popular Character"
