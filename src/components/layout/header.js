@@ -8,7 +8,7 @@ function Header(props) {
   return (
     <header className="header">
       <Link className="top-logo" to="/">
-        <img className="top-logo-img" src={logo} alt="Star Wars Logo" />
+        <img className="top-logo__img" src={logo} alt="Star Wars Logo" />
       </Link>
 
       <Title

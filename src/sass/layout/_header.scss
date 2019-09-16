@@ -11,14 +11,15 @@
     margin: 5rem;
     align-self: flex-start;
 
-    .top-logo-img {
+    &__img {
       width: 12rem;
       height: 4.7rem;
     }
-  }
-  .top-logo:hover {
-    cursor: pointer;
-    transform: scale(1.2);
-    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+      transition: all 0.3s ease-in-out;
+    }
   }
 }

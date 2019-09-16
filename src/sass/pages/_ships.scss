@@ -58,11 +58,11 @@
             color: $secondary-text-color;
             align-self: flex-end;
             font-size: 1.4rem;
-          }
 
-          .card-link:hover {
-            background-color: $link-hover2-color;
-            color: $secondary-color;
+            &:hover {
+              background-color: $link-hover2-color;
+              color: $secondary-color;
+            }
           }
         }
       }

@@ -354,7 +354,7 @@ p {
       align-self: flex-start;
 }
 
-.header .top-logo .top-logo-img {
+.header .top-logo__img {
   width: 12rem;
   height: 4.7rem;
 }
@@ -371,7 +371,7 @@ p {
   -ms-flex-preferred-size: 7rem;
       flex-basis: 7rem;
   background-color: #ccc;
-  border-top: 1px solid #888;
+  border-top: 0.1rem solid #888;
 }
 
 .home {
@@ -481,14 +481,14 @@ p {
   margin-bottom: 3rem !important;
 }
 
-.carousel-indicators li {
+.carousel .carousel-indicators li {
   width: 2rem;
   height: 2rem;
   background-color: #444;
   border-radius: 50%;
 }
 
-.carousel-caption {
+.carousel .carousel-caption {
   padding-bottom: 0;
 }
 
