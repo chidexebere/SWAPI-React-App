@@ -1,8 +1,8 @@
 import React from "react";
-import Ships from "./ships";
-import Planets from "./planets";
-import People from "./people";
-import ViewMoreBtn from "./viewMoreBtn";
+import Ships from "../pages/ships";
+import Planets from "../pages/planets";
+import People from "../pages/people";
+import ViewMoreBtn from "../elements/viewMoreBtn";
 
 function Home(props) {
   return (

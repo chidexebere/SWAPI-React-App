@@ -1,0 +1,24 @@
+.carousel {
+  .carousel-inner {
+    padding: 0 5rem 5rem;
+
+    .card {
+      min-height: 35rem;
+    }
+
+    .mb-4 {
+      margin-bottom: 3rem !important;
+    }
+  }
+
+  .carousel-indicators li {
+    width: 2rem;
+    height: 2rem;
+    background-color: $secondary-text-color;
+    border-radius: 50%;
+  }
+
+  .carousel-caption {
+    padding-bottom: 0;
+  }
+}

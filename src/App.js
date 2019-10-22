@@ -1,8 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
-import Header from "./components/header";
-import Main from "./components/main";
+import Header from "./components/layout/header";
+import Main from "./components/layout/main";
+import Footer from "./components/layout/footer";
 
 class App extends React.Component {
   render() {
@@ -22,6 +23,7 @@ class App extends React.Component {
               render={() => <Main displayPeople={true} />}
             />
           </Switch>
+          <Footer />
         </div>
       </BrowserRouter>
     );

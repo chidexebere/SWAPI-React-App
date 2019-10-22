@@ -1,27 +1,9 @@
 import React from "react";
-import planets from "../data/planetData";
-import Title from "./title";
+//import { Link } from "react-router-dom";
 
-function Planets(props) {
-  const lineStyle = {
-    width: 90,
-    border: "3px solid",
-    margin: 10
-  };
-
-  const textStyle = {
-    fontSize: 32,
-    paddingLeft: 0
-  };
-
+function Carousel(props) {
   return (
-    <section className="planets">
-      <Title
-        displayTitleLogo={false}
-        text="Popular Planets"
-        textStyle={textStyle}
-        lineStyle={lineStyle}
-      />
+    <section className="carousel">
       <div id="demo" className="carousel slide" data-ride="carousel">
         <ul className="carousel-indicators">
           <li data-target="#demo" data-slide-to="0" className="active" />
@@ -32,15 +14,16 @@ function Planets(props) {
           <div className="carousel-item active">
             <div className="container">
               <div className="card-deck mb-3 text-center">
-                {props.planetsData1.map(planet => {
+                {props.apiData1.map(planet => {
+                  const { url, name } = planet;
                   return (
                     <div
-                      key={planet.url}
+                      key={url}
                       className="card mb-4 shadow-sm"
                       style={{
                         backgroundImage: `url(${
                           Object.values(
-                            props.getResource(planets, planet.name)
+                            props.getResource(props.helpData, name)
                           )[2]
                         })`,
                         backgroundPosition: "center",
@@ -49,7 +32,7 @@ function Planets(props) {
                       }}
                     >
                       <div className="carousel-caption">
-                        <h1>{planet.name}</h1>
+                        <h1>{name}</h1>
                       </div>
                     </div>
                   );
@@ -61,15 +44,16 @@ function Planets(props) {
           <div className="carousel-item ">
             <div className="container">
               <div className="card-deck mb-3 text-center">
-                {props.planetsData2.map(planet => {
+                {props.apiData2.map(planet => {
+                  const { url, name } = planet;
                   return (
                     <div
-                      key={planet.url}
+                      key={url}
                       className="card mb-4 shadow-sm"
                       style={{
                         backgroundImage: `url(${
                           Object.values(
-                            props.getResource(planets, planet.name)
+                            props.getResource(props.helpData, name)
                           )[2]
                         })`,
                         backgroundPosition: "center",
@@ -78,7 +62,7 @@ function Planets(props) {
                       }}
                     >
                       <div className="carousel-caption">
-                        <h1>{planet.name}</h1>
+                        <h1>{name}</h1>
                       </div>
                     </div>
                   );
@@ -90,15 +74,16 @@ function Planets(props) {
           <div className="carousel-item ">
             <div className="container">
               <div className="card-deck mb-3 text-center">
-                {props.planetsData3.map(planet => {
+                {props.apiData3.map(planet => {
+                  const { url, name } = planet;
                   return (
                     <div
-                      key={planet.url}
+                      key={url}
                       className="card mb-4 shadow-sm"
                       style={{
                         backgroundImage: `url(${
                           Object.values(
-                            props.getResource(planets, planet.name)
+                            props.getResource(props.helpData, name)
                           )[2]
                         })`,
                         backgroundPosition: "center",
@@ -107,7 +92,7 @@ function Planets(props) {
                       }}
                     >
                       <div className="carousel-caption">
-                        <h1>{planet.name}</h1>
+                        <h1>{name}</h1>
                       </div>
                     </div>
                   );
@@ -127,4 +112,5 @@ function Planets(props) {
     </section>
   );
 }
-export default Planets;
+
+export default Carousel;

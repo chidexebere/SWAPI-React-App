@@ -1,0 +1,41 @@
+.col-md-6 {
+  padding-right: 0.8rem;
+  padding-left: 0.8rem;
+  .col-auto {
+    flex: 2 0 auto;
+    height: 40rem;
+  }
+
+  .col {
+    flex-grow: 1;
+    background-color: $main-color;
+  }
+
+  .p-4 {
+    padding: 5rem 1.5rem !important;
+    .mb-2 {
+      margin-bottom: 0 !important;
+    }
+
+    .text-success {
+      font-size: 2rem;
+      color: $secondary-text-color !important;
+    }
+
+    .mb-1 {
+      margin-bottom: 3rem !important;
+    }
+
+    .mb-auto {
+      color: $main-text-color;
+      .stretched-link {
+        font-size: 1.5rem;
+        text-decoration: underline;
+        display: initial;
+        padding: 0;
+        color: $secondary-text-color !important;
+        font-weight: bolder;
+      }
+    }
+  }
+}

@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Title from "./title";
-import Search from "./search";
-import logo from "../assets/logo.png";
+import Title from "../elements/title";
+import Search from "../elements/search";
+import logo from "../../assets/logo.png";
 
 function Header(props) {
   return (
-    <section className="header">
+    <header className="header">
       <Link className="top-logo" to="/">
-        <img className="top-logo-img" src={logo} alt="Star Wars Logo" />
+        <img className="top-logo__img" src={logo} alt="Star Wars Logo" />
       </Link>
 
       <Title
@@ -17,9 +17,10 @@ function Header(props) {
         img={logo}
         imgAlt="Star Wars Logo"
         titleStyle={{ margin: 0 }}
+        textStyle={{ color: "white" }}
       />
       <Search />
-    </section>
+    </header>
   );
 }
 

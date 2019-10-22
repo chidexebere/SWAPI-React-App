@@ -1,0 +1,14 @@
+.viewMoreBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem 0 5rem;
+
+  .btn {
+    width: 33%;
+    border: 2px solid;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+}
