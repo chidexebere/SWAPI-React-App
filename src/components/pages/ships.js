@@ -1,6 +1,7 @@
 import React from "react";
 import starShips from "../../data/shipData";
 import Title from "../elements/title";
+import Card from "../views/card";
 
 function Ships(props) {
   const lineStyle = {
@@ -23,7 +24,13 @@ function Ships(props) {
         lineStyle={lineStyle}
         path="/ships"
       />
-      <div className="album py-5 bg-light">
+
+      <Card
+        apiData={props.shipsData}
+        helpData={starShips}
+        getResource={props.getResource}
+      />
+      {/* <div className="album py-5 bg-light">
         <div className="container">
           <div className="row">
             {props.shipsData.map(ship => {
@@ -59,7 +66,7 @@ function Ships(props) {
             })}
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }
